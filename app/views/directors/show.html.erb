@@ -1,0 +1,20 @@
+<div class = "container">
+
+  <div class = "page-header">
+    <h1>Director #<%= @director.id %></h1>
+  </div>
+
+  <dl class = "dl-horizontal">
+    <dt>Dob</dt>
+    <dd><%= @director.dob %></dd>
+    <dt>Name</dt>
+    <dd><%= @director.name %></dd>
+    <dt>Bio</dt>
+    <dd><%= @director.bio %></dd>
+    <dt>Image</dt>
+    <img src = "<%= @director.image_url %>" width = 320>
+    <!-- <a href = "/directors">Back</a> -->
+    <!-- <a href = "/directors/<%= @director.id %>/edit">Edit</a> -->
+    <!-- <a href = "/delete_photo/<%= @director.id %>">Delete</a> -->
+  </dl>
+</div>

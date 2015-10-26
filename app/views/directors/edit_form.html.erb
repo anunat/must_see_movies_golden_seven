@@ -1,0 +1,49 @@
+<div class = "container">
+
+  <div class = "page-header">
+
+    <h1>Edit Director</h1>
+
+  </div>
+
+  <form action = "/update_director/<%= @director.id %>" class = "form-horizontal">
+    <div class="form-group">
+      <label for="dob" class = "col-sm-2 control-label">Dob</label>
+      <div class = "col-sm-10">
+        <input type="text" class="form-control" id="the_dob" name = "the_dob" value="<%= @director.dob %>">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name" class = "col-sm-2 control-label">Name</label>
+      <div class = "col-sm-10">
+        <input type="text" class="form-control" id="the_name" name = "the_name" value="<%= @director.name %>">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="bio" class = "col-sm-2 control-label">Bio</label>
+      <div class = "col-sm-10">
+        <textarea class="form-control" id="the_bio" name = "the_bio" rows = "3"><%= @director.bio %></textarea>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="image_url" class = "col-sm-2 control-label">Image url</label>
+      <div class = "col-sm-10">
+        <input type="text" class="form-control" id="the_image_url" name = "the_image_url" value = "<%= @director.image_url %>">
+      </div>
+    </div>
+
+    <div class = "col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary">Edit Director</button>
+    </div>
+  </form>
+
+</div>
+
+
+
+
+
+
