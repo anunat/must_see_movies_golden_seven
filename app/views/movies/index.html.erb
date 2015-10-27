@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="page-header">
+    <h1>Movies</h1>
+  </div>
+  <p>
+    <a href = "http://localhost:3000/movies/new_form" class = "btn btn-primary">Add a New Movie</a>
+  </p>
+  <table class = "table table-hover">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Title</th>
+        <th>Year</th>
+        <th>Duration</th>
+        <th>Description</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <% @list_of_movies.each do |movie| %>
+    <tbody>
+      <tr>
+        <td>
+          <img src="<%= movie.image_url %>" width="80">
+        </td>
+        <td>
+          <%= movie.title %>
+        </td>
+        <td>
+          <%= movie.year %>
+        </td>
+        <td>
+          <%= movie.duration %>
+        </td>
+        <td >
+          <%= truncate(movie.description) %>
+        </td>
+        <td>
+          <a href="http://localhost:3000/movies/<%= movie.id %>" class = "btn btn-primary">
+            <i class = "fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="http://localhost:3000/movies/<%= movie.id %>/edit_form" class = "btn btn-warning">
+            <i class = "fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="http://localhost:3000/delete_movie/<%= movie.id %>" class = "btn btn-danger">
+            <i class = "fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
