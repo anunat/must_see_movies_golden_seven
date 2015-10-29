@@ -14,25 +14,23 @@ class MoviesController < ApplicationController
 
   def create_row
 
-    p = Movie.new
-    p.title = params[:the_title]
-    p.year = params[:the_year]
-    p.duration = params[:the_duration]
-    p.description = params[:the_description]
-    p.image_url = params[:the_image_url]
-    p.save
+    @movie = Movie.new
+    @movie.title = params[:the_title]
+    @movie.year = params[:the_year]
+    @movie.duration = params[:the_duration]
+    @movie.description = params[:the_description]
+    @movie.image_url = params[:the_image_url]
+    @movie.save
 
-    redirect_to("http://localhost:3000")
+    render("show")
 
   end
 
   def destroy
 
-    p= Movie.find_by({:id => params[:id]})
+    @movie= Movie.find_by({:id => params[:id]})
 
-    p.destroy
-
-    redirect_to("http://localhost:3000")
+    @movie.destroy
 
   end
 
@@ -44,15 +42,15 @@ class MoviesController < ApplicationController
 
   def update_row
 
-    p = Movie.find_by({:id => params[:id]})
-    p.title = params[:the_title]
-    p.year = params[:the_year]
-    p.duration = params[:the_duration]
-    p.description = params[:the_description]
-    p.image_url = params[:the_image_url]
-    p.save
+    @movie = Movie.find_by({:id => params[:id]})
+    @movie.title = params[:the_title]
+    @movie.year = params[:the_year]
+    @movie.duration = params[:the_duration]
+    @movie.description = params[:the_description]
+    @movie.image_url = params[:the_image_url]
+    @movie.save
 
-    redirect_to("http://localhost:3000")
+    render("show")
 
   end
 
